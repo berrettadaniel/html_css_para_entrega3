@@ -49,24 +49,6 @@
 
 
 /* GRID DEL LAYOUT */
-
-/* .gridContainerService ORIGINAL
-
-.gridContainerService {
-    display: grid;
-    grid-template-columns: 20% 80%;
-    grid-template-rows: 80px 1fr 80px;
-    grid-template-areas: "menu menu"
-                         "empresas forms"
-                         "footer footer";
-    box-sizing: border-box;
-    background-image:url("../images/paredLadrillo.jpg");
-    background-repeat: none;
-    min-height: calc(100vh - 80px); /* ALTO MINIMO DEL GRID: 100vh-ALTO HEADER 
-}
-   .gridContainerService ORIGINAL */
-
-
 /* croquis del gridContainerService
 
 columnas: 100px 120px 1fr 2fr
@@ -104,11 +86,6 @@ menuTareas> cuadro de texto para tarea realizada y boton para agregarla con la f
 
 
 /* FORMATOS DE TEXTO DEL GRID */
-.gridContainerService h1 {
-    font-size: 40px;
-    color: white;
-}
-
 .gridContainerService h2 {
     font-size: 30px;
     color: white;
@@ -124,6 +101,8 @@ menuTareas> cuadro de texto para tarea realizada y boton para agregarla con la f
 /* Lista de Empresas */
 .gridContainerService .listaEmpService {
     display: flex;
+    padding: 10px;
+    flex-direction: column;
     grid-area: listaEmpresas;
     background-color: rgb(179, 26, 26);
 }
@@ -165,10 +144,19 @@ menuTareas> cuadro de texto para tarea realizada y boton para agregarla con la f
 
 .gridContainerService .menuTareasService {
     display: flex;
+    padding: 20px;
+    flex-direction: row;
+    align-items: space-between;
     grid-area: menuTareas;
     background-color: darksalmon;
 }
 
+
+button {
+    width: 150px;
+    height: 40px;
+    background-color: rgb(241, 207, 166);
+}
 
 /* DE ACA EN ADELANTE HAY QUE REVISAR TODO 
     Excepto la parte del "header" para Mobile */
