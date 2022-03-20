@@ -47,17 +47,8 @@
 /* FIN DEL HEADER */
 
 
-
 /* GRID DEL LAYOUT */
 /* croquis del gridContainerService
-
-columnas: 100px 120px 1fr 2fr
-filas   : 100px 1fr 80px 80px
-
-listaEmpresas   empresaSel   menu         menu
-listaEmpresas   empresaSel   colFecha     colObservacion
-listaEmpresas   empresaSel   menuTareas   menuTareas
-footer          footer       footer       footer
 
 listaEmpresas> son las empresas por cada servicio
 empresaSel> es la empresa elegida de la lista y se muestran datos: nombre, mail y telf
@@ -86,11 +77,6 @@ menuTareas> cuadro de texto para tarea realizada y boton para agregarla con la f
 
 
 /* FORMATOS DE TEXTO DEL GRID */
-.gridContainerService h2 {
-    font-size: 30px;
-    color: white;
-}
-
 .gridContainerService p {
     font-size: 20px;
     font-style: italic;
@@ -104,10 +90,12 @@ menuTareas> cuadro de texto para tarea realizada y boton para agregarla con la f
     padding: 10px;
     flex-direction: column;
     grid-area: listaEmpresas;
-    background-color: rgb(179, 26, 26);
+    background-color: rgb(150, 125, 94);
+    border-style: double;
 }
 
-.gridContainerService .listaEmpService ul {
+.gridContainerService .listaEmpService ul p {
+    font-style: normal;
     font-size: small;
 }
 
@@ -115,7 +103,7 @@ menuTareas> cuadro de texto para tarea realizada y boton para agregarla con la f
 .gridContainerService .empSelService {
     display: block;
     grid-area: empresaSel;
-    background-color: rgb(207, 104, 20);
+    background-color: rgb(150, 125, 94);
 }
 
 .gridContainerService .empSelService p {
@@ -126,7 +114,7 @@ menuTareas> cuadro de texto para tarea realizada y boton para agregarla con la f
 /* Menu de los servicios por Empresa */
 .gridContainerService .menuService {
     display: flex;
-    background-color: rgb(138, 82, 36);
+    background-color: rgb(150, 125, 94);
     grid-area: menu;
     min-height: 100px;
     flex-direction: column;
@@ -137,10 +125,12 @@ menuTareas> cuadro de texto para tarea realizada y boton para agregarla con la f
 }
 
 /* Lista de tareas hechas por la emresa */
+/* Columna de fecha de tareas realizadas */
 .gridContainerService .tareasHechasFecha {
     display: table-column;
     grid-area: colFecha;
-    background-color: darkgoldenrod;
+    border-style: groove;
+    background-color: rgb(150, 125, 94);
 }
 
 .gridContainerService .tareasHechasFecha p {
@@ -148,10 +138,12 @@ menuTareas> cuadro de texto para tarea realizada y boton para agregarla con la f
     font-size: small;
 }
 
+/* Columna de observaciones por tarea realizada en cierta fecha */
 .gridContainerService .tareasHechasObs {
     display: table-column;
     grid-area: colObservacion;
-    background-color: rgb(114, 86, 13);
+    border-style: groove;
+    background-color: rgb(150, 125, 94);
 }
 
 .gridContainerService .tareasHechasObs p {
@@ -159,13 +151,13 @@ menuTareas> cuadro de texto para tarea realizada y boton para agregarla con la f
     font-size: small;
 }
 
+/* Menu de tareas donde se ingresa obervacion y se agrega a la lista */
 .gridContainerService .menuTareasService {
     display: flex;
     padding: 10px;
     flex-direction: row;
-    /*align-items: space-between;*/
     grid-area: menuTareas;
-    background-color: darksalmon;
+    background-color: rgb(150, 125, 94);;
 }
 
 .gridContainerService .menuTareasService p {
@@ -177,6 +169,7 @@ menuTareas> cuadro de texto para tarea realizada y boton para agregarla con la f
     width: 150px;
 }
 
+/* Formato generico para los botones */
 button {
     border-radius: 5px;
     width: 100px;
@@ -184,59 +177,6 @@ button {
     background-color: rgb(241, 207, 166);
     font-size: small;
 }
-
-/* DE ACA EN ADELANTE HAY QUE REVISAR TODO 
-    Excepto la parte del "header" para Mobile */
-
-/* ************************************** */
-/* todo lo que sigue viene copiado del styleOffer.css */
-/* *************************************************************** */
-
-
-
-
-
-
-/* PARTE SUPERIOR DEL GRID */
-/* .gridContainer .presentation */
-/* Es la presentacion del objetivo general del sitio  */
-.gridContainerService .presentation {
-    display: flex;
-    grid-area: mainRow;
-    min-height: 100px;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: top;
-    padding: 10px;
-}
-
-/* PARTE INFERIOR IZQUIERDA DEL GRID */
-/* .gridContainer .SearchService */
-/* Se explica el objetivo de poder encontrar diferentes servicios */
-.gridContainerService .SearchService {
-    display: flex;
-    grid-area: buscaServicio;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 10px;
-}
-
-/* PARTE INFERIOR DERECHA DEL GRID */
-/* .gridContainer .OfferJob */
-/* Se explica el objetivo de poder ofrecer servicios */
-.gridContainerService .OfferJob {
-    display: flex;
-    grid-area: ofreceTrabajo;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 10px;
-}
-
 
 /* FOOTER */
 .footerService {
@@ -282,21 +222,8 @@ button {
         grid-template-rows: 0.5fr 1fr;
     }
 
-    /* FORMATOS DE TEXTO DEL GRID PARA MOBILE */
-    .gridContainerService h1 {
-        font-size: 25px;
-        color: white;
-    }
-
-    .gridContainerService h2 {
-        font-size: 18px;
-        color: white;
-    }
-
-    .gridContainerService p {
-        font-size: 14px;
-        font-style: italic;
-        color: white;
+    .gridContainerService .tareasHechasObs {
+        min-width: 170px;
     }
 
     /* FOOTER PARA MOBILE */
